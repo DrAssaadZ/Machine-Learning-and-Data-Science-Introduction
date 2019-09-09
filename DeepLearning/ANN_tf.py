@@ -44,7 +44,7 @@ def main():
     # after loading the data it is devided automaticaly into X and y features
     Xtrain = flatten(train['X'].astype(np.float32) / 255.0)
     Ytrain = train['y'].flatten() - 1			# matlab starts counting from 1 so we sub 1
-    Xtrain,Ytrain = shuffle(Xtrain,Ytrain)		# we shuffle it to get different result each time!
+    Xtrain, Ytrain = shuffle(Xtrain,Ytrain)		# we shuffle it to get different result each time!
     ytrain_ind = y2indicator(Ytrain)
 
     Xtest = flatten(test['X'].astype(np.float32) / 255.0)

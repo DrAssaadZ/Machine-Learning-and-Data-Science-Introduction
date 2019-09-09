@@ -65,7 +65,7 @@ def main():
 	max_iter = 6
 	print_period = 10
 	N = Xtrain.shape[0]
-	batch_sz = 32
+	batch_sz = 200
 	n_batches = N // batch_sz
 
 	# limit samples since input will always have to be same size (number of sample and batch size)
@@ -76,7 +76,7 @@ def main():
 	# print "Xtest.shape:", Xtest.shape
 	# print "Ytest.shape:", Ytest.shape
 
-	# initial weights
+	# parameters for layers
 	M = 500
 	K = 10
 	poolsz = (2, 2)
@@ -93,6 +93,7 @@ def main():
     # vanilla ANN weights
     W3_init = np.random.randn(W2_shape[-1]*8*8, M) / np.sqrt(W2_shape[-1]*8*8 + M)
     b3_init = np.zeros(M, dtype=np.float32)
+    
     W4_init = np.random.randn(M, K) / np.sqrt(M + K)
     b4_init = np.zeros(K, dtype=np.float32)
 
